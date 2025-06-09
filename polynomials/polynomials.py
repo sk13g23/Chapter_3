@@ -1,3 +1,4 @@
+import numbers
 from numbers import Number
 
 
@@ -79,6 +80,7 @@ class Polynomial:
     def __mul__(self,other):
         if isinstance(other , Number):
             return Polynomial(tuple(other*n for n in self.coefficients))
+
         if isinstance(other, Polynomial):
             degree_of_multiplied_polynomial = self.degree() + other.degree()
             list = [0 for i in range(degree_of_multiplied_polynomial+1)]
@@ -97,10 +99,11 @@ class Polynomial:
         return self*other
 
 
-    '''for i in a.coefficients:
-    ...:     j_index=0
-    ...:     for j in b.coefficients:
-    ...:         list[(j_index+i_addition)] += (i*j)
-    ...:         j_index += 1
-    ...:     i_addition += 1
-'''
+    def __pow__(self,exponent):
+        if isinstance(exponent, numbers.Integral):
+            copy = self * 1
+            for i in range(exponent-1):
+                self = self * copy
+
+        return self
+
