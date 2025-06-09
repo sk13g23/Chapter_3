@@ -81,8 +81,7 @@ class Polynomial:
             return Polynomial(tuple(other*n for n in self.coefficients))
         if isinstance(other, Polynomial):
             degree_of_multiplied_polynomial = self.degree() + other.degree()
-            list = [for i in range(degree_of_multiplied_polynomial+1)]
-            for i in range
+            list = [0 for i in range(degree_of_multiplied_polynomial+1)]
 
     def __rmul__(self,other):
         return self*other
