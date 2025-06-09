@@ -104,6 +104,18 @@ class Polynomial:
             copy = self * 1
             for i in range(exponent-1):
                 self = self * copy
+            return self
+        else:
+            NotImplemented
 
-        return self
+    def __call__(self , x):
+        if isinstance(x , Number):
+            index = 0
+            value = 0
+            for i in self.coefficients:
+                value += i*((x)**index)
+                index += 1
+            return value
+
+
 
