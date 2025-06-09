@@ -74,3 +74,15 @@ class Polynomial:
             return Polynomial((self.coefficients[0] - other,)+tuple(-n for n in self.coefficients[1:]))
         else:
             return Polynomial((other - self.coefficients[0],)+tuple(-n for n in self.coefficients[1:]))
+
+
+    def __mul__(self,other):
+        if isinstance(other , Number):
+            return Polynomial(tuple(other*n for n in self.coefficients))
+        if isinstance(other, Polynomial):
+            degree_of_multiplied_polynomial = self.degree() + other.degree()
+            list = [for i in range(degree_of_multiplied_polynomial+1)]
+            for i in range
+
+    def __rmul__(self,other):
+        return self*other
