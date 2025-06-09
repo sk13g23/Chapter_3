@@ -71,6 +71,6 @@ class Polynomial:
 
     def __rsub__(self,other):
         if self.coefficients[0] >= other:
-            return Polynomial((self.coefficients[0] - other,)+self.coefficients[1:])
+            return Polynomial((self.coefficients[0] - other,)+tuple(-n for n in self.coefficients[1:]))
         else:
-            return Polynomial((other - self.coefficients[0],)+self.coefficients[1:])
+            return Polynomial((other - self.coefficients[0],)+tuple(-n for n in self.coefficients[1:]))
