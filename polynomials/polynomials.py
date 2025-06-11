@@ -113,7 +113,7 @@ class Polynomial:
             index = 0
             value = 0
             for i in self.coefficients:
-                value += i*((x)**index)
+                value += i*(( x )**index)
                 index += 1
             return value
 
