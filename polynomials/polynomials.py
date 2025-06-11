@@ -120,11 +120,13 @@ class Polynomial:
     def dx(self):
         if isinstance(self, Polynomial):
             derivative = self.coefficients[1:]
-            index = tuple(i for i in range(1,self.degree()+2))
-            result = tuple(a*b for a,b in zip(derivative,index))
+            index = tuple(i for i in range(1, self.degree() + 2))
+            result = tuple(a * b for a, b in zip(derivative, index))
             return Polynomial(result)
 
 
+def derivative(self):
+    return self.dx()
 
 
 
